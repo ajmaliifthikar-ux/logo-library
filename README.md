@@ -1,124 +1,92 @@
 # 🎨 LogoLibrary
 
-> A professionally curated, open-source collection of **1,100+ brand logos and UI icons** — searchable, categorized, and production-ready.
+> A professionally curated, auto-expanding open-source collection of brand logos and UI icons.
 
-[![Vercel](https://img.shields.io/badge/Live%20Demo-Vercel-%23e94560?style=flat-square&logo=vercel)](https://your-vercel-url.vercel.app)
-[![GitHub Stars](https://img.shields.io/github/stars/YOUR_USERNAME/logo-library?style=flat-square&color=%23e94560)](https://github.com/YOUR_USERNAME/logo-library)
-[![License](https://img.shields.io/badge/License-MIT-blue?style=flat-square)](LICENSE)
-
----
-
-## ✨ Why LogoLibrary?
-
-Most logo/icon collections are messy dumps. This one is different:
-
-- 🏷️ **Categorized by Industry** — Tech, Finance, Social, Design, and more
-- 🔍 **Full-Text Searchable** — SQLite FTS5 + JSON metadata
-- 📦 **Multiple Variants** — icon, wordmark, full, and default versions per brand
-- ☁️ **CDN Ready** — Built-in Cloudinary sync scripts
-- 🤖 **Auto-Expanding** — Add new Figma files and the pipeline extracts + organizes automatically
-- ⚡ **Developer First** — Clean SVGs, kebab-case naming, copy-ready paths
+**Live Explorer:** [your-vercel-url.vercel.app](https://your-vercel-url.vercel.app)  
+**Core Repo:** [github.com/YOUR_USERNAME/logo-library](https://github.com/YOUR_USERNAME/logo-library)
 
 ---
 
-## 📂 Repository Structure
+## 🚀 What's Inside
 
-```
-Logo_Library/
-├── Assets/                      # Core library by category
-│   ├── Browsers_and_OS/
-│   ├── Business_and_Finance/
-│   ├── Design_and_Creative/
-│   ├── Social_and_Communication/
-│   ├── Technology_and_Development/
-│   └── ...
-├── metadata.json                # Full JSON manifest for API usage
-├── library_index.db             # SQLite FTS5 search index
-├── cloudinary_sync.py           # Upload script to Cloudinary CDN
-└── README.md
-```
+- **1,135+ brand logos** across 9 categories
+- **1,877+ asset files** (SVG + PNG variants)
+- **Instant search** by name, tag, or category
+- **One-click copy** — local path or Cloudinary CDN URL
+- **Auto-expanding** — paste a Figma URL, the pipeline does the rest
 
 ---
 
-## 🚀 Quick Start
+## 📁 Repositories
 
-### Search via JSON
-```js
-const metadata = require('./metadata.json');
+| Repo | Purpose | Tech |
+|------|---------|------|
+| [`logo-library`](./Logo_Library) | Core assets, metadata, SQLite index | Python, SQLite |
+| [`logo-library-web`](./logo-explorer) | Searchable web dashboard | Next.js 16, Tailwind |
 
-// Find all brands tagged with "payment"
-const payments = Object.entries(metadata)
-  .filter(([_, b]) => b.tags.includes('payment'));
-```
+---
 
-### Search via SQLite
+## 🛠 Quick Start
+
 ```bash
-sqlite3 library_index.db
-```
-```sql
-SELECT brand_name, path FROM logos_fts
-WHERE logos_fts MATCH 'video OR messaging';
-```
+# 1. Clone
+git clone https://github.com/YOUR_USERNAME/logo-library.git
+cd logo-library
 
-### Use in your project
-```html
-<!-- Local -->
-<img src="Assets/Technology_and_Development/vercel/vercel-icon.svg" />
+# 2. Install explorer deps
+cd logo-explorer && npm install && npm run dev
 
-<!-- Cloudinary CDN -->
-<img src="https://res.cloudinary.com/dldf3xftp/image/upload/logo_library/Technology_and_Development/vercel/vercel-icon" />
+# 3. Open http://localhost:3000
 ```
 
 ---
 
-## 🛠 Auto-Expanding the Library
+## 🤖 Auto-Pipeline
 
-Found a new Figma community file with icons? Just copy the Figma URL to your clipboard. The background pipeline handles the rest:
+Drop a Figma community file URL into `figma_queue.txt` (or copy it to your clipboard) and run:
 
-1. **Clipboard Listener** detects the Figma URL
-2. **Extractor** downloads all SVGs via Figma API
-3. **Organizer** sorts assets into categories
-4. **Indexer** updates `metadata.json` + SQLite DB
-5. **Sync** uploads to Cloudinary CDN
-6. **Git** auto-commits new assets
-
-To start the pipeline:
 ```bash
-python3 master_processor.py &
-python3 master_queue_processor.py &
-./cloudinary_sync.sh &
+python3 logo_pipeline.py --daemon
+```
+
+This background process will:
+1. Extract SVGs from Figma
+2. Organize into categories
+3. Update `metadata.json` + SQLite index
+4. Auto-commit to git
+5. Sync to Cloudinary CDN
+
+---
+
+## 📊 Pipeline Commands
+
+```bash
+# Check what's running
+python3 logo_pipeline.py --status
+
+# Run full pipeline once
+python3 logo_pipeline.py --all
+
+# Stop all background tasks
+python3 logo_pipeline.py --stop
+
+# Rebuild metadata + search index only
+python3 logo_pipeline.py --index
 ```
 
 ---
 
-## 📊 Stats
+## 🌍 Deploy
 
-| Metric | Count |
-|--------|-------|
-| Brands | 1,135+ |
-| Total Assets | 1,877+ |
-| Categories | 9 |
-| Source Formats | SVG, PNG |
+```bash
+# Deploy everything (GitHub + Vercel)
+./launch.sh YOUR_GITHUB_USERNAME
+```
 
 ---
 
-## 🤝 Contributing
+## 📜 License
 
-1. Fork the repo
-2. Add your SVGs to the appropriate `Assets/` category
-3. Run the indexing script to update metadata
-4. Open a Pull Request
+MIT — see [LICENSE](./Logo_Library/LICENSE). Brand logos are trademarks of their respective owners.
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for details.
-
----
-
-## ⚖️ License
-
-This project is licensed under the **MIT License**. See [LICENSE](LICENSE).
-
-> **Note:** Brand logos are trademarks of their respective owners. This library is for educational and reference purposes.
-
----
-
-Built with ❤️ by [Mohamed Ajmal Ifthikar](https://github.com/YOUR_USERNAME)
+Built by [Mohamed Ajmal Ifthikar](https://github.com/YOUR_USERNAME)

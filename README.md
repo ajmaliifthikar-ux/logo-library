@@ -2,7 +2,7 @@
 
 > A professionally curated, auto-expanding open-source collection of brand logos and UI icons.
 
-**Live Explorer:** [your-vercel-url.vercel.app](https://your-vercel-url.vercel.app)  
+**Live Explorer:** [https://logo-explorer.vercel.app](https://https://logo-explorer.vercel.app)  
 **Core Repo:** [github.com/ajmalifthikar/logo-library](https://github.com/ajmaliifthikar-ux/logo-library)
 
 ---

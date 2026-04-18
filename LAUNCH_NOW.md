@@ -16,17 +16,17 @@
 
 ## 🌍 Step 1: Push to GitHub
 
-Replace `YOUR_GITHUB_USERNAME` with your actual username, then run:
+Replace `ajmalifthikar` with your actual username, then run:
 
 ```bash
 cd "/Users/ajmalifthikar/Downloads/New Folder With Items 2/Logo_Library"
 git branch -M main
-git remote add origin https://github.com/YOUR_GITHUB_USERNAME/logo-library.git
+git remote add origin https://github.com/ajmalifthikar/logo-library.git
 git push -u origin main
 
 cd "../logo-explorer"
 git branch -M main
-git remote add origin https://github.com/YOUR_GITHUB_USERNAME/logo-library-web.git
+git remote add origin https://github.com/ajmalifthikar/logo-library-web.git
 git push -u origin main
 ```
 

@@ -3,7 +3,7 @@
 > A professionally curated, auto-expanding open-source collection of brand logos and UI icons.
 
 **Live Explorer:** [your-vercel-url.vercel.app](https://your-vercel-url.vercel.app)  
-**Core Repo:** [github.com/YOUR_USERNAME/logo-library](https://github.com/YOUR_USERNAME/logo-library)
+**Core Repo:** [github.com/ajmalifthikar/logo-library](https://github.com/ajmalifthikar/logo-library)
 
 ---
 
@@ -30,7 +30,7 @@
 
 ```bash
 # 1. Clone
-git clone https://github.com/YOUR_USERNAME/logo-library.git
+git clone https://github.com/ajmalifthikar/logo-library.git
 cd logo-library
 
 # 2. Install explorer deps
@@ -80,7 +80,7 @@ python3 logo_pipeline.py --index
 
 ```bash
 # Deploy everything (GitHub + Vercel)
-./launch.sh YOUR_GITHUB_USERNAME
+./launch.sh ajmalifthikar
 ```
 
 ---
@@ -89,4 +89,4 @@ python3 logo_pipeline.py --index
 
 MIT — see [LICENSE](./Logo_Library/LICENSE). Brand logos are trademarks of their respective owners.
 
-Built by [Mohamed Ajmal Ifthikar](https://github.com/YOUR_USERNAME)
+Built by [Mohamed Ajmal Ifthikar](https://github.com/ajmalifthikar)

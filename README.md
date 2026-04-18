@@ -3,7 +3,7 @@
 > A professionally curated, auto-expanding open-source collection of brand logos and UI icons.
 
 **Live Explorer:** [your-vercel-url.vercel.app](https://your-vercel-url.vercel.app)  
-**Core Repo:** [github.com/ajmalifthikar/logo-library](https://github.com/ajmalifthikar/logo-library)
+**Core Repo:** [github.com/ajmalifthikar/logo-library](https://github.com/ajmaliifthikar-ux/logo-library)
 
 ---
 
@@ -30,7 +30,7 @@
 
 ```bash
 # 1. Clone
-git clone https://github.com/ajmalifthikar/logo-library.git
+git clone https://github.com/ajmaliifthikar-ux/logo-library.git
 cd logo-library
 
 # 2. Install explorer deps
